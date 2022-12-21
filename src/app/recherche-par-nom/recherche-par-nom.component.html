@@ -1,0 +1,43 @@
+<div class="container">
+    <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2 mt-2 ">
+        <label>Nom Acteur en tapant</label>
+        <input #nom [(ngModel)]="searchTerm" name="searchTerm" class="form-control" >
+        </div>
+        </form>
+<!-- 
+    <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2 mt-2 ">
+        <label>Nom Acteur en tapant</label>
+        <input class="form-control" #searchTerm (keyup)="onKeyUp(searchTerm.value)">
+        </div>
+        </form> -->
+   <!--  <form class="form-inline">
+    <div class="form-group mx-sm-3 mb-2 mt-2 ">
+    <label>Nom Acteur</label>
+    <input type="text" class="form-control" [(ngModel)]="nomActeur" name="nomActeur" class="form-control">
+    <button type="submit" (click)="rechercherActs()" class="btn btn-primary mb-2 ml-2">Rechercher</button>
+    </div>
+    </form> -->
+    
+                
+            <div class="card shadow mb-4">
+            <div class="card-body">
+            <table class="table table-striped">
+            <tr> <th>Id</th><th>Nom</th> <th>Prenom</th> <th>Age</th><th>Film</th> </tr>
+            <tbody *ngFor="let acteur of acteurs |filter:searchTerm ">
+            <tr >
+            <td>{{acteur.idActeur}}</td>
+            <td>{{acteur.nomActeur}}</td>
+            <td>{{acteur.prActeur}}</td>
+            <td>{{acteur.ageActeur}}</td>
+            <td>{{acteur.film.nomF}}</td>
+           <!-- <td><button type="button" class="btn btn-danger" (click)="supprimerActeur(acteur)">Supprimer</button></td>
+            <td><a class="btn btn-success" [routerLink]="['/updateActeur',acteur.idActeur]">Modifier</a></td>-->
+        
+        </tr>
+            </tbody>
+            </table>
+            </div>
+            </div>
+            </div>

@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+    <app-update-film 
+    [film]="updatedfil"
+    [ajout]="ajout"
+    (filmUpdated)="filmUpdated($event)" >
+</app-update-film>
+    </div>
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <tr> <th>Id</th><th>Nom Film</th>  </tr>
+    <tbody *ngFor="let film of films">
+    <tr >
+    <td>{{film.idF}}</td>
+    <td>{{film.nomF}}</td>
+    <td><a class="btn btn-success" (click)="updateFil(film)">Editer</a></td>
+
+    
+
+</tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>

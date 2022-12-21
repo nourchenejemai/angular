@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+        <label>Films </label>
+        <select class="form-control form-control-lg" id="idF" name="idF"
+        [(ngModel)]="IdFilm" (change)="onChange()">
+        <option *ngFor="let fil of films" value="{{fil.idF}}">
+        {{fil.nomF}}
+         </option>
+        </select>
+        </div>
+
+        
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <tr> <th>Id</th><th>Nom</th> <th>Prenom</th> <th>Age</th> </tr>
+    <tbody *ngFor="let acteur of acteurs">
+    <tr >
+    <td>{{acteur.idActeur}}</td>
+    <td>{{acteur.nomActeur}}</td>
+    <td>{{acteur.prActeur}}</td>
+    <td>{{acteur.ageActeur}}</td>
+   <!-- <td>{{acteur.film.nomF}}</td>-->
+      <!-- <td><button type="button" class="btn btn-danger" (click)="supprimerActeur(acteur)">Supprimer</button></td>
+    <td><a class="btn btn-success" [routerLink]="['/updateActeur',acteur.idActeur]">Modifier</a></td>-->
+
+</tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
